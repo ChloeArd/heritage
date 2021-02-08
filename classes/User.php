@@ -29,24 +29,21 @@ class User {
     /**
      * @param mixed $username
      */
-    public function setUsername($username): void
-    {
+    public function setUsername($username): void {
         $this->username = $username;
     }
 
     /**
      * @return mixed
      */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
 
     /**
      * @param mixed $password
      */
-    public function setPassword($password): void
-    {
+    public function setPassword($password): void {
         if (strlen($password) > 0) {
             $password = password_hash($password, PASSWORD_BCRYPT);
         }

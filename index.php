@@ -2,27 +2,15 @@
 
 require './classes/user.php';
 require "./classes/Computer.php";
-
+require "./classes/Smartphone.php";// se met apres Computer comme c'est une extension de Computer
+require "./classes/SmartphoneAndroid.php";
 
 $user = new User("John Doe", "password très fort");
 
-$computerOne = new Computer('Apple', 'Intel', '1Go', 'Linux', 'Vert Matthias');
-$computerOne->setMouse(true);
-$computerOne->setKeyboard(true);
-$computerOne->start();
-$computerOne->sleep();
-$computerOne->shutdown();
-echo "Memory: ".$computerOne->getMemory()."<br>";
+$computerOne = new Computer('Lenovo', 'Linux');
 $computerOne->setOwner($user);
 
-$computerTwo = new Computer('Huawei', 'Integrated', 'AMD Ryzen 3', 'Zindozs', 'Gris');
-// Par défault c'est false
-$computerTwo->setMouse(true);
-$computerTwo->start();
-$computerTwo->sleep();
-$computerTwo->shutdown();
-echo "Memory: ".$computerTwo->getMemory()."<br>";
-$computerTwo->setOwner($user);
+$smartphone = new Smartphone("Huawei", "SmartphoneAndroid", "Free");
+$smartphone->start();
 
-echo $computerOne->getOwner();
-echo $computerTwo->getOwner();
+$android = new SmartphoneAndroid("Huawei", "Free");
